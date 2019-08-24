@@ -137,9 +137,9 @@ val check_pat = not o contains_duplicates o get_var_strings
 fun match (v,p) =
     case (v,p) of
        (_, Wildcard) => SOME []
-     | (Const i, Variable x) => SOME [(x, Const i)]
+     | (c, Variable x) => SOME [(x, c)]
      | (Unit, UnitP) => SOME []
-     | (Const i, ConstP ii) => SOME []
+     | (Const i, ConstP ii) => if i==ii then SOME [] else NONE
      | (Tuple vl, TupleP ps) => if length vl = length ps
                                 then let val pairs = ListPair.zip (vl,ps)
                                      in all_answers match pairs
