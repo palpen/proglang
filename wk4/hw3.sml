@@ -137,7 +137,7 @@ val check_pat = not o contains_duplicates o get_var_strings
 fun match (v,p) =
     case (v,p) of
        (_, Wildcard) => SOME []
-     | (Const i, Variable x) => SOME [(x,i)]
+     | (Const i, Variable x) => SOME [(x, Const i)]
      | (Unit, UnitP) => SOME []
      | (Const i, ConstP ii) => SOME []
      | (Tuple vl, TupleP ps) => if length vl = length ps

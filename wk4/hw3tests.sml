@@ -50,7 +50,7 @@ val test104 = check_pat (ConstructorP ("hi",TupleP[Variable "x",Variable "x"])) 
 val test105 = check_pat (ConstructorP ("hi",TupleP[Variable "x",ConstructorP ("yo",TupleP[Variable "x",UnitP])])) = false
 
 val test110 = match (Const(1), UnitP) = NONE
-val test111 = match (Const 1, Variable "x") = SOME [("x", 1)]
+val test111 = match (Const 1, Variable "x") = SOME [("x", Const 1)]
 val a = Tuple [Const 1, Const 2]
 val b = TupleP [Variable "x", Variable "y"]
 val a1 = [Const 1, Const 2]
@@ -59,6 +59,6 @@ val test112 = match (a,b)
 
 val test120 = first_match Unit [UnitP] = SOME []
 val lp = [Variable "x", Wildcard];
-val test121 = first_match (Const 1) lp = SOME [("x", 1)]
+val test121 = first_match (Const 1) lp = SOME [("x", Const 1)]
 val test122 = first_match (Const 1) [] = NONE
 
