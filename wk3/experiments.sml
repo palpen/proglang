@@ -1,12 +1,12 @@
-datatype mytype = TwoInts of int * int
-               |  Str of string
-               | Pizza
+(* datatype mytype = TwoInts of int * int *)
+(*                |  Str of string *)
+(*                | Pizza *)
 
-fun f x =
-    case x of
-        Pizza => 3
-      | TwoInts(i1, i2) => i1 + i2
-      | Str s => String.size s
+(* fun f x = *)
+(*     case x of *)
+(*         Pizza => 3 *)
+(*       | TwoInts(i1, i2) => i1 + i2 *)
+(*       | Str s => String.size s *)
 
 
 (*
@@ -59,3 +59,21 @@ fun nondecreasing xs =
       | x::[] => true
       | head::(neck::rest) => head <= neck andalso nondecreasing (neck::rest)
                               *)
+
+(* datatype my_int_list = Empty *)
+(*        | Cons of int * my_int_list *)
+
+(* val xs = Cons(1,Empty) *)
+(* val ys = Cons(5,Cons(3,Cons(4,Cons(5,Empty)))) *)
+
+(* fun append_mylist (xs,ys) = *)
+(*     case xs of *)
+(*         Empty => ys *)
+(*      | Cons(x,xs') => Cons(x, append_mylist(xs',ys)) *)
+(* val app = append_mylist(xs,ys) *)
+(* val test1 = append_mylist(xs,ys) = Cons(1,Cons(5,Cons(3,Cons(4,Cons(5,Empty))))) *)
+
+fun f (xs) =
+    case xs of
+        a::(b::(c::[])) => [a,b,c]
+      | _ => []

@@ -2,7 +2,7 @@
 
 Defining a new datatype:
 
-```sml
+```
 datatype mytype = TwoInts of int * int
                 | Str of string
 				| Pizza
@@ -15,7 +15,7 @@ Constructors can be either a function or a value. It is a function if the varian
 
 To recover the values of the newly defined type, `mytype`, define a function such as
 
-```sml
+```
 fun f x =
     case x of
         Pizza => 3
