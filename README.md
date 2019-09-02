@@ -1,1 +1,1 @@
-# proglang_A
+Course assignments for [Programming Languages](https://www.coursera.org/learn/programming-languages) course on Coursera
