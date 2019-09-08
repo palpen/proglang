@@ -2,3 +2,4 @@
 summary_*.pdf
 *_summary_*.pdf
 videocode/
+.DS_Store
