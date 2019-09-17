@@ -7,7 +7,9 @@
 ;; Uncomment the line below and change HOMEWORK_FILE to the name of your homework file.
 ;;(require "HOMEWORK_FILE")
 
-(require rackunit)
+(require rackunit
+         "hw4.rkt")
+
 
 ;; Helper functions
 (define ones (lambda () (cons 1 ones)))
@@ -18,7 +20,10 @@
    "Sample tests for Assignment 4"
 
    ; sequence test
-   (check-equal? (sequence 0 5 1) (list 0 1 2 3 4 5) "Sequence test")
+   ;; (check-equal? (sequence 0 5 1) (list 0 1 2 3 4 5) "Sequence test 0")
+   ;; (check-equal? (sequence 3 11 2) (list 3 5 7 9 11) "Sequence test 1")
+   ;; (check-equal? (sequence 3 8 3) (list 3 6) "Sequence test 2")
+   ;; (check-equal? (sequence 3 2 1) (list) "Sequence test 3")
 
    ; string-append-map test
    ;; (check-equal? (string-append-map
@@ -27,6 +32,8 @@
 
    ;; ; list-nth-mod test
    ;; (check-equal? (list-nth-mod (list 0 1 2 3 4) 2) 2 "list-nth-mod test")
+
+   ;; (check-exn (list-nth-mod (list) 2) 2 "list-nth-mod test 2") ;
 
    ;; ; stream-for-n-steps test
    ;; (check-equal? (stream-for-n-steps ones 2) (list 1 1) "stream-for-n-steps test")
@@ -53,8 +60,10 @@
    ;; ; while-less test
    ;; (check-equal? (while-less 7 do (begin (set! a (+ a 1)) a)) #t "while-less test")
 
-   ;; ))
+   ))
 
 (require rackunit/text-ui)
 ;; runs the test
-(run-tests tests)
+(run-tests tests 'verbose)
+
+
